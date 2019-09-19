@@ -1,0 +1,18 @@
+
+@font-face {
+    font-family:"Bodon";
+    src: url('../font/robotomono-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    
+    
+    }
+body {font-family:"Bodon", Arial, Helvetica, sans-serif; margin-left:25%;margin-right: 25%}
+
+h1   {color:black; font-size: 20pt;}
+h2   {font-family:sans-serif;color:black; font-size: 10pt;}
+h3   {font-family:sans-serif;color:black; font-size: 15pt;}
+h4   {font-family:sans-serif;color:black; font-size: 10pt;}
+p    {font-family:sans-serif; color:grey; font-size: 10pt;}
+
+
