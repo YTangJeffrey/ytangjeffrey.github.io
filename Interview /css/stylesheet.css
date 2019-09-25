@@ -1,18 +1,72 @@
 
 @font-face {
-    font-family:"Bodon";
+    font-family:"roboto";
     src: url('../font/robotomono-regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-    
-    
     }
-body {font-family:"Bodon", Arial, Helvetica, sans-serif; margin-left:25%;margin-right: 25%}
+@font-face {
+        font-family:"LatoL";
+        src: url('../font/Lato-Thin.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        }
+        @font-face {
+            font-family:"LatoR";
+            src: url('../font/Lato-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            }
 
-h1   {color:black; font-size: 20pt;}
-h2   {font-family:sans-serif;color:black; font-size: 10pt;}
-h3   {font-family:sans-serif;color:black; font-size: 15pt;}
-h4   {font-family:sans-serif;color:black; font-size: 10pt;}
+        @font-face {
+                font-family:"PFR";
+                src: url('../font/PlayfairDisplay-Regular.ttf') format('truetype');
+                font-weight: normal;
+                font-style: normal;
+                }
+        @font-face {
+                font-family:"PFBL";
+                src: url('../font/PlayfairDisplay-Black.ttf') format('truetype');
+                font-weight: normal;
+                font-style: normal;
+                    }
+                    @font-face {
+                        font-family:"PFB";
+                        src: url('../font/PlayfairDisplay-Bold.ttf') format('truetype');
+                        font-weight: normal;
+                        font-style: normal;
+                            }
+
+        .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 20px
+                
+              }
+
+body {margin-left:0%;margin-right: 0%}
+
+.line{
+    width: 33%;
+    height: 0px;
+    border-bottom: 1px solid black;
+    display: block;
+    margin-left:33%;margin-right: 33%;
+    margin-bottom: 100px;
+    }
+
+h1   {font-family:"PFBL", Helvetica, sans-serif; color:black; font-size: 50pt;text-align: center;text-transform: uppercase;}
+
+h2   {font-family:"LatoR";color:grey; font-size: 12pt; font-style: normal;margin-left:23%;margin-right: 23%;line-height: 1.6;padding-bottom: 70px;}
+
+h3   {font-family:"PFB";color:black; font-size: 15pt; font-style: normal;margin-left:20%;margin-right: 20%;display: block;text-align: center;padding-bottom: 20px; }
+
+p2   {font-family:"LatoR", Arial, Helvetica, sans-serif; color:grey; font-size: 8pt; margin-left:33%;margin-right: 33%;display: block;padding-top:0px;padding-bottom: 35px; line-height: 1.6;}
+
+p3   {font-family:"PFB", Arial, Helvetica, sans-serif; color:rgb(0,100,250); font-size: 15pt;margin-left:17%;margin-right: 17%;display: block;padding-top: 15px;padding-bottom: 15px; line-height: 1.6;}
+
+p4   {font-family:"PFR";color:rgb(50,50,50); font-size: 14pt;margin-left:23%;margin-right: 23%;display: block; line-height: 1.6;padding-bottom: 30px; padding-top: 15px;}
 p    {font-family:sans-serif; color:grey; font-size: 10pt;}
 
 
