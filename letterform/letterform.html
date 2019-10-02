@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        #artboard {
+            width: 100px;
+            height: 300px;
+            background: grey;
+            position: relative;
+            display: block;
+
+        }
+        .canvas{
+            position: relative;
+            display:block;
+            margin-left: 40%;
+            
+    
+        }
+
+        
+        
+     div{background-color: white;}
+    #center{background-color:black;position: relative;width:200px;height:200px;}
+    .centered{position: absolute}
+    #circle{width: 30px;height: 80px;top:46%;left:42%;border-radius: 35px;transform: rotate(45deg);}
+    #bigcircle{background:transparent;width:  200px;height: 200px;top:68%;left:-10%;border-radius: 200px;transform: rotate(45deg); border: 20px; border-color:tomato;border-style: solid;border-right-color: transparent;
+    border-bottom-color:transparent;
+    transform: rotate(135deg);}
+    #smallcircle{background:transparent;width:100px;height:100px;top:80%;left:20%;border-radius: 200px;transform: rotate(45deg); border: 20px; border-color:white;border-style: solid;border-right-color: transparent;
+    border-bottom-color:transparent;
+    transform: rotate(-55deg);}
+    #realcircle{background:greenyellow;width: 80px;height: 80px;top:46%;left:42%;border-radius: 75px;transform: rotate(45deg);}
+    #bar1{width:20px;height:220px;top: 0%;left:70%;border-radius: 0px;border-radius:20px;}
+    #bar2{width:20px;height:220px;top: 20%;left:20%;border-radius: 0px;border-radius:20px;}   
+    
+    #hole{background:red;width: 15px;height: 15px;top:37%;left:60%;border-radius:20px;}
+    #hole2{background:yellow;width: 20px;height: 20px;top:85%;left:30%;border-radius:20px;}
+    #bar3{width:15px;height:70px;top: 20%;left:20%;border-radius: 0px;border-radius:20px;transform: rotate(315deg);} 
+    #bar4{ background:aqua;width:25px;height:80px;top: 20%;left:20%;border-radius: 0px;border-radius:20px;transform: rotate(315deg);z-index: 10;border-radius: 35% 25% 29% 71% / 20% 30% 70% 70%;} 
+
+    #arc  {
+    background:transparent;
+    border: 20px solid white;
+    border-style: dotted;
+    display: block;
+    min-width: 200px;
+    min-height: 20%;
+    border-radius: 100%;
+    border-right-color: transparent;
+    border-bottom-color:transparent;
+    border-top-color:transparent;
+    
+}
+   
+    
+        
+
+
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class = "canvas">
+        <div id="artboard01" class = "artboard">
+        
+            <div id="center">
+                <div class="centered "id="circle">
+                </div>
+                <div class="centered "id="bar1">
+                </div>
+                <div class="centered "id="bar2">
+                </div>
+                <div class="centered "id="cutoff">
+                </div>
+                <div class="centered "id="hole">
+                </div>
+                <div class="centered "id="hole2">
+                </div>
+            
+             </div id="center">
+           
+            
+        </div>
+       
+        <div id="artboard02" class = "artboard">
+            <div style="background:blue; width: 200px; height:300px;display: block; " >
+              
+                <div class="centered "id="realcircle" style="top: 28%; left:10%">
+                </div>
+                <div class="centered "id="bar2">
+                </div>
+                <div class="centered "id="bar3"style="top: 23%; left:9%">
+                </div>
+                <div class="centered "id="bar3" style="top: 26%; left:9%">
+                </div>
+                <div class="centered "id="bar3" style="top: 29%; left:9%">
+                </div>
+                <div class="centered "id="bar3" style="top: 32%; left:9%">
+                </div>
+                <div class="centered "id="bar3" style="top: 35%; left:9%">
+                </div>
+                <div class="centered "id="bar3" style="top: 38%; left:9%">
+                </div>
+
+                
+           
+        </div>
+        </div>
+        <div id="artboard03" class = "artboard">
+            <div style="background: pink; width: 200px; height:300px;display: block; " >
+                <div class="centered "id="bar2"style="top: 46%; left:6%">
+                </div>
+                <div class="centered "id="arc"style="top: 46%; left: 15%">
+                </div>
+                <div class="centered "id="bar4" style="top: 50%; left:12%">
+                </div>
+                <div class="centered "id="bar4" style="top: 52%; left:13%; background-color:yellow ; z-index: 9" >
+                </div>
+                
+        </div>
+        </div>
+        <div id="artboard04" class = "artboard">
+            <div style="background: #000000; width: 200px; height:300px;display: block; " >
+            <div class="centered "id="bigcircle">
+                </div>
+                <div class="centered "id="smallcircle">
+                </div>
+                <div class="centered "id="bar3" style="background-color:cornflowerblue; top: 80%; left:18%">
+                </div>
+            
+            </div>
+        </div>
+        <div id="artboard05" class = "artboard">
+            <div style="background: wheat; width: 200px; height:300px;display: block; " >
+            
+
+                <div class="centered "id="bar1"style="top: 89%; left:12% ; transform: rotate(90deg)">
+                </div>
+                
+
+            </div>
+        </div>
+
+
+    </div>
+   
+    
+</body>
+</html>
