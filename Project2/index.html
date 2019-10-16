@@ -27,6 +27,7 @@
 
 
         }
+
         @font-face {
             font-family: "link";
             src: url('assets/fonts/Pilowlava-Regular.otf') format('truetype');
@@ -105,6 +106,29 @@
             }
         }
 
+        img{
+            opacity: 0;
+            animation-name: imgenter;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-out;
+        }
+
+        @keyframes imgenter {
+            0% {
+                top:30px;
+                opacity: 0;
+                
+            }
+
+            100% {
+                top:0px;
+                opacity: 100;
+                
+            }
+        }
+
+
 
 
 
@@ -179,6 +203,18 @@
 
         }
 
+        #endingpage {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            opacity: 0%;
+            background: black;
+            display: none;
+
+        }
+
 
         h1 {
             color: white
@@ -250,21 +286,21 @@
         }
 
         a:link {
-            font-size: 12px;
+            font-size: 15px;
             font-family: 'link';
             text-decoration: none;
-            color:  	#282828;
+            color: #282828;
             transition: 0.2s;
         }
 
         a:visited {
             text-decoration: none;
-            color:  	#282828;
+            color: #282828;
         }
 
         a:hover {
-            
-            color: tomato;
+
+            color: white;
             font-size: 15px;
             transition: 0.2s;
         }
@@ -316,6 +352,22 @@
             color: white;
             font-size: 10pt;
             letter-spacing: 1px;
+            opacity: 0;
+            animation-name: h2enter;
+            padding-top: 20px;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+            animation-timing-function: ease-out;
+        }
+
+        @keyframes h2enter {
+            0%{
+                opacity: 0;
+            padding-top: 20px;
+            }
+            100%{opacity: 100;
+                padding-top: 0px;}
+            
         }
 
         /* h3 is for healine */
@@ -355,14 +407,17 @@
     https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.js"> </script>
     <script> src = "https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.js"</script>
     <script src="sketch.js"> </script>
+    <!-- audio -->
+    <div style="display: none;">
+        <audio controls autoplay>
+            <source src="assets/insect.mp3">
 
-    <audio controls autoplay>
-        <source src="assets/insect.mp3" >
-        
-      
-    </audio>
+
+        </audio>
+    </div>
     <div id="welcomepage">
-        <div style="position:fixed; top: 0; right: 0pt; left:0;bottom: 0;"><img src="assets/original.gif" width="100%"></div>
+        <div style="position:fixed; top: 0; right: 0pt; left:0;bottom: 0;"><img src="assets/original.gif" width="100%">
+        </div>
         <div id="headlinecontainer">
             <h1 class="ml12" id="headline">
 
@@ -387,7 +442,8 @@
                 <img src="assets/indigenoushuman.jpg" width="100%">
             </div>
             <div>
-                <h3 style="position: absolute; top: 10%; left:10%">N͡atíon͝’s͡ ͡I̷n͠di̶g̕en̕ous͝ ̢Pe҉óp̕ĺe͡ C҉o̴ņf̛irḿ ͝T͜he̶y͞ ́Do͢n͘’t͝
+                <h3 style="position: absolute; top: 10%; left:10%">N͡atíon͝’s͡ ͡I̷n͠di̶g̕en̕ous͝ ̢Pe҉óp̕ĺe͡
+                    C҉o̴ņf̛irḿ ͝T͜he̶y͞ ́Do͢n͘’t͝
                     Nee̶d̛ Sp̶eçi͏a͠l
                     Hol̶ida͡y͢,͟ J̛u̴s͏t̶ Large̵ ͡Sw͝a̷t͟h͡s̀ Of͘ L̢àn̢d̨ ̕Re͡t̴ur͜ne̢d͡ ͟I̴mm̵edi̶a̵te̡l̵y̵</h3>
             </div>
@@ -547,7 +603,7 @@
         <div class="canvasleft">
             <div>
                 <h3>
-                        W̙̰ͅe̼̤̩̪͝'̀re̬̭͚͇͡ a̦͎l̙͓̜̼̰̀l҉̠ ̸̥͙̻ͅg͘u͖̘̠̟̯̝i͍̤͉̘n͓̠̻̖̭̟e͓a̛̫͚ ͉͍͖ͅp͚̦̺̫̟͖i̗̻̱̣̹̣g̭̼̯̰̘͉͍s͠</h3>
+                    W̙̰ͅe̼̤̩̪͝'̀re̬̭͚͇͡ a̦͎l̙͓̜̼̰̀l҉̠ ̸̥͙̻ͅg͘u͖̘̠̟̯̝i͍̤͉̘n͓̠̻̖̭̟e͓a̛̫͚ ͉͍͖ͅp͚̦̺̫̟͖i̗̻̱̣̹̣g̭̼̯̰̘͉͍s͠</h3>
             </div>
             <div><a href="http://www.pinknoiz.com/coldwar/ciaradiation.html">read original article</a></div>
             <img src="assets/crimson_mist.jpg" width="100%">
@@ -650,7 +706,7 @@
             <div><a href="http://hoaxes.org/?URL=http%3A%2F%2Fwww.entensity.net%2F">connect</a></div>
             <img src="assets/blackmarketbaby.png" width="100%">
 
-            
+
         </div>
         <div class="canvasoutline">
             <p style="padding: 30px;"> But T’Gatoi and my mother had met as
@@ -686,7 +742,9 @@
             <video width="100%" height="240" controls>
                 <source src="assets/BiteLabs.mp4" type="video/mp4">
             </video>
-            <h3>H̼͍̻̯͍̯ͤͫ̈́͋ͬ̏̇̏͞ͅê͇̹̪̠ͪ̓ͩ̌ͯ̈̏͌͘a̬̻͈̫̖̫̹͎̯̐ͧ̐̊͊t̡̞͚͎̞̬ͮ͐̊ḣ͙͚̔ͯ ̷̹̗̟̮̝̩̥̜̖ͥ͌̀̏̉͟B̢͔̋̍̇̾̅͌̐̓͜i̸̞̬͎̩̠̙͖̪ͩ͜t̴̪̤͇̉̽̇̓͌̍͞͡ͅḙ̖̠̫͙́̓ͭ̇ͣ́͂͘ ͎̭̱̐̈͝Ḷ̡̮͓̮̗̺ͯ̋͐ͤͥ͋͝ȧ҉̷҉̹̫͍̳̲̰͇͎b͈̘͔̄ͨ̂̔ͩ̂͡</h3>
+            <h3>H̼͍̻̯͍̯ͤͫ̈́͋ͬ̏̇̏͞ͅê͇̹̪̠ͪ̓ͩ̌ͯ̈̏͌͘a̬̻͈̫̖̫̹͎̯̐ͧ̐̊͊t̡̞͚͎̞̬ͮ͐̊ḣ͙͚̔ͯ
+                ̷̹̗̟̮̝̩̥̜̖ͥ͌̀̏̉͟B̢͔̋̍̇̾̅͌̐̓͜i̸̞̬͎̩̠̙͖̪ͩ͜t̴̪̤͇̉̽̇̓͌̍͞͡ͅḙ̖̠̫͙́̓ͭ̇ͣ́͂͘
+                ͎̭̱̐̈͝Ḷ̡̮͓̮̗̺ͯ̋͐ͤͥ͋͝ȧ҉̷҉̹̫͍̳̲̰͇͎b͈̘͔̄ͨ̂̔ͩ̂͡</h3>
 
             <div><a href="http://bitelabs.org/">order your flesh</a></div>
             <div>
@@ -730,12 +788,13 @@
     <div class="section" id="7">
         <!-- dirty egg -->
         <div class="canvasleft">
-                <div><a
+            <div><a
                     href="https://books.google.com/books?id=fIx4zubuoygC&lpg=PA255&ots=UpwbfDRuOP&pg=PA255#v=onepage&q&f=false">explore
                     the history</a></div>
             <div>
                 <h3>
-                        A̫̫̫̥̮̮͎͡r̤̦t̥̪̥͡í̼̠͉͚fi̛̥ͅc̸̙͖͉i̝̖̹̞͍̰a̻̞̝͟l̫l̳̳̮͔̜̜̀ý̭̣ ͚͓̘D͚͙͍͝i͔̗̮̻̺̞͡r͕̥̬͈t͎̼͓̱̲y̦̥̼̺͕̳ E̫̬̻̪͈g̛̠͔͙̦͚̖͔gs͍̲</h3>
+                    A̫̫̫̥̮̮͎͡r̤̦t̥̪̥͡í̼̠͉͚fi̛̥ͅc̸̙͖͉i̝̖̹̞͍̰a̻̞̝͟l̫l̳̳̮͔̜̜̀ý̭̣ ͚͓̘D͚͙͍͝i͔̗̮̻̺̞͡r͕̥̬͈t͎̼͓̱̲y̦̥̼̺͕̳
+                    E̫̬̻̪͈g̛̠͔͙̦͚̖͔gs͍̲</h3>
             </div>
             <div>
                 <img src="assets/dirtyeggs.jpg" width="width">
@@ -766,7 +825,7 @@
             </div>
         </div>
 
-       
+
     </div>
 
     <div class="section" id="8">
@@ -778,7 +837,10 @@
                     membership agreement before you join. <br><br>
 
                     1. Membership in a fund such as ours may be illegal in certain situations, states or countries.
-                    To the best of our (and our legal advisors) knowledge, this is legal in all fifty states in the United States Of America; however laws change, particularly when those in charge of the laws are afraid of something different, or perceive that ideas such as ours may somehow "threaten" their base of power. If you
+                    To the best of our (and our legal advisors) knowledge, this is legal in all fifty states in the
+                    United States Of America; however laws change, particularly when those in charge of the laws are
+                    afraid of something different, or perceive that ideas such as ours may somehow "threaten" their base
+                    of power. If you
                     believe your membership in this fund is somehow illegal, then do not join.<br><br>
 
                     2. The results we hope for, namely for the deposits in the fund to grow over a very long time,
@@ -801,11 +863,12 @@
                     any
                     future necessary legal fees are covered. This is to protect the integrity of the investment fund
                     itself. The remaining $8.00 will be used to print and mail your certificate (packaging and postage
-                    included,) place and maintain your name and information in our database, and to cover the associated costs of running the website and database, including web hosting fees and regular backups stored in
+                    included,) place and maintain your name and information in our database, and to cover the associated
+                    costs of running the website and database, including web hosting fees and regular backups stored in
                     different
                     locations as described below. </h2>
             </div>
-            <img src="assets/Logo_02.gif" width = "100%">
+            <img src="assets/Logo_02.gif" width="100%">
         </div>
         <div class="canvasoutline">
             <p style="padding: 30pt;">“Yes. Tomorrow you will resume your suffering—if you must. But just now, just
@@ -836,7 +899,8 @@
             </div>
             <div><a href="http://www.thedogisland.com">Resgister for dog island</a></div>
             <div>
-                <h3>D̩͉̰̜̖̳̦̬ͥ͌ͨ͊̓̍̂͢͝͝O͔̤͓̠̤ͭͮ̿̈ͤ̽ͯͧ̍Ğ̨̨̣̰̟ ̪̖̹ͮ͆̆̿̓I̎̔̄̊̽̈͘҉̶͔̜ͅS̘͍̪̤ͩ͋͊͞Ḷ̪͓̝̗̈́ͭ͗̈͂ͤ̅̓A̩̦̼̞̔̀̏ͮ͟͡N̖͔̦͍̹͗̐̍̾̏ͤ͞D̳̗̗̼̰̝̙ͭ͌</h3>
+                <h3>D̩͉̰̜̖̳̦̬ͥ͌ͨ͊̓̍̂͢͝͝O͔̤͓̠̤ͭͮ̿̈ͤ̽ͯͧ̍Ğ̨̨̣̰̟
+                    ̪̖̹ͮ͆̆̿̓I̎̔̄̊̽̈͘҉̶͔̜ͅS̘͍̪̤ͩ͋͊͞Ḷ̪͓̝̗̈́ͭ͗̈͂ͤ̅̓A̩̦̼̞̔̀̏ͮ͟͡N̖͔̦͍̹͗̐̍̾̏ͤ͞D̳̗̗̼̰̝̙ͭ͌</h3>
                 <h2>Over 2,500 dogs are already enjoying a better life at Dog Island. Separated from the anxieties
                     of urban life, dogs on Dog Island are healthy dogs who live a natural, healthy and happy life, free
                     from the stress and hardship associated with daily life among humans.
@@ -875,13 +939,11 @@
 
             </div>
         </div>
-
-
     </div>
 
 
-    <div class="background">
-        <!-- <p style="padding: 30px; z-index: 0;">
+    <div id="endingpage">
+        <p style="padding: 30px; z-index: 0;">
             “I’m sorry,” I whispered.<br><br>
             She rubbed my shoulders with four of her limbs.<br><br>
             “Do you care?” I asked. “Do you care that it’s me?”<br><br>
@@ -896,9 +958,10 @@
             “I still am.” I could admit it to her here, now. <br><br>
 
 
-        </p> -->
+        </p>
 
     </div>
+    <div class="background"></div>
 
 
     <script>
@@ -918,7 +981,8 @@
             function initialize() {
                 $('.section').each(function () { sectionlist.push(this) });
                 console.log(sectionlist);//initial list
-                sectionload(true);
+
+
 
             }
             //get a random pagenumber as a index from the array
@@ -928,30 +992,51 @@
 
             function sectionload(isfirsttime) {
 
-
                 if (pageindex == null) {
                     pageindex = newpageindex();
                 };
 
-                console.log(pageindex);
-                pageid = sectionlist[pageindex].id;
-                $("#" + pageid).animate({ opacity: "0" }, 500);
-                setTimeout(
-                    function () {
-                        $("#" + pageid).hide();
-                        console.log("from" + pageid);
-                        if (isfirsttime == true) {
+                if (sectionlist.length > 0) {
 
-                        } else { sectionlist.splice(pageindex, 1); };
+                    console.log(pageindex);
+                    pageid = sectionlist[pageindex].id;
+                    $("#" + pageid).animate({ opacity: "0" }, 500);
+                    setTimeout(
+                        function () {
+                            $("#" + pageid).hide();
+                            console.log("from" + pageid);
+                            if(isfirsttime){}else{
+                            sectionlist.splice(pageindex, 1);}
+                            
+                            pageindex = newpageindex();
+                           if(sectionlist.length!=1){
+                            pageid = sectionlist[pageindex].id;
+                            console.log(sectionlist);
+                            console.log("to" + pageid);
+                            $("#" + pageid).show();
+                            $("#" + pageid).animate({ opacity: "100" }, 500);}
+                            
 
-                        pageindex = newpageindex();
-                        pageid = sectionlist[pageindex].id;
-                        console.log(sectionlist);
-                        console.log("to" + pageid);
-                        $("#" + pageid).show();
-                        $("#" + pageid).animate({ opacity: "100" }, 500);
+                        }, 500);
+                } else {
+                    $("#" + pageid).animate({ opacity: "0" }, 500);
+                    setTimeout(
+                        function () {
+                            $("#" + pageid).hide();
+                            sectionlist.splice(pageindex, 1);
+                            console.log(sectionlist);
+                            console.log("you are on the last page");
+                            $("#endingpage").show();
+                            $("#endingpage").animate({ opacity: "100" }, 500);
+                        },
+                        500);
 
-                    }, 500);
+
+
+                }
+
+
+
                 // sectionlist.forEach(element => 
                 // {$(element).animate({ opacity: "0" }, 500);
                 //  $(element).hide();});
@@ -963,6 +1048,7 @@
                 setTimeout(function () {
                     $("#welcomepage").hide();
                     console.log("welcomepagehidden");
+                    sectionload(true);
                 }, 600);
             })
             //everytime you go to the next day,you    go a random section
