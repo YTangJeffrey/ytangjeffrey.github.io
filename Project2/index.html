@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project2</title>
+    <style>
+        @font-face {
+            font-family: "web";
+            src: url('assets/fonts/Avara-Bold.otf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "script";
+            src: url('assets/fonts/LiuJianMaoCao-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: "bodynews";
+            src: url('assets/fonts/Roboto-Light.ttf') format('truetype');
+
+
+        }
+
+        #headline {
+            position: fixed;
+            text-align: center;
+            font-family: 'web';
+            font-size: 80pt;
+        }
+
+
+        .ml12 {
+
+
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        .ml12 .letter {
+            display: inline-block;
+            line-height: 0.2em;
+        }
+
+
+
+        div[class*=box] {
+            top: 80%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        /* h4 button font */
+        h4 {
+            font-family: web;
+            position: relative;
+            margin-top: -1.4em;
+
+        }
+
+        h4:hover {
+            font-size: 10pt;
+            opacity: 0;
+            transition: 0.4s;
+
+        }
+
+        .box-2 {
+            position: relative;
+        }
+
+
+
+
+        .btn {
+            line-height: 50px;
+            text-align: center;
+            width: 250px;
+            cursor: pointer;
+        }
+
+        .btn-two {
+            color: #FFF;
+            transition: all 0.5s;
+            position: relative;
+        }
+
+        .btn-two span {
+            z-index: 10;
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-two::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            transition: all 0.5s;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-two::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            transition: all 0.5s;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-two:hover::before {
+            transform: rotate(-45deg);
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        .btn-two:hover::after {
+            transform: rotate(45deg);
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+
+
+
+        #welcomepage {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background: black;
+            z-index: 99;
+
+        }
+
+
+        h1 {
+            color: white
+        }
+
+        .section {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background: black;
+            z-index: 1;
+            opacity: 0%;
+            display: none;
+
+
+
+        }
+
+        .canvasleft {
+            position: absolute;
+            top: 0%;
+            bottom: 0%;
+            left: 0%;
+            right: 50%;
+        }
+
+        .canvasoutline {
+
+            position: absolute;
+            top: 0%;
+            bottom: 0%;
+            left: 50%;
+            right: 0%;
+            border: white 1px solid;
+            margin: 10px;
+            margin-bottom: -10px;
+            z-index: 10;
+
+            animation-name: canvasenter;
+            animation-duration: 5s;
+            ;
+            animation-fill-mode: forwards;
+            ;
+        }
+
+        @keyframes canvasenter {
+            0% {
+                border-top-color: transparent;
+                border-right-color: transparent;
+                border-left-color: transparent;
+                border-bottom-color: transparent;
+            }
+
+            50% {
+                border-top-color: transparent;
+                border-right-color: transparent;
+                border-left-color: transparent;
+                border-bottom-color: transparent;
+            }
+
+            100% {
+                border-top-color: white;
+                border-right-color: white;
+                border-left-color: white;
+                border-bottom-color: white;
+            }
+        }
+
+
+        .nextday {
+            font: black;
+
+        }
+
+        p {
+            font-size: 25pt;
+            ;
+            font-family: 'script';
+            color: grey;
+        }
+
+        h2 {
+            font-family: 'bodynews';
+            font-style: normal;
+            color: white;
+            font-size: 10pt;
+            letter-spacing: 1px;
+        }
+
+        /* h3 is for healine */
+        h3 {
+            font-family: 'web';
+            font-size: 40pt;
+            color: white;
+        }
+
+        .background {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background: black;
+            z-index: -99;
+        }
+
+        button {
+
+            color: white;
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"> </script>
+    <script src="
+    https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.js"> </script>
+    <script> src = "https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.js"</script>
+    <script src="sketch.js"> </script>
+    <div id="welcomepage">
+        <div id="headlinecontainer">
+            <h1 class="ml12" id="headline">
+
+                G̶͍̅ͪ̂͗̅̍a̬̺͐̂ͪͫ̃͡n͇̬̖̜̠͇̏̏ͩͨ̑͑͟'̙͎ͯͅŝ̷̺̳̗̓̾̋́<br><br>D̲̪̫̭̾ͯi̯̼̖̱͎͈̋̓̊ͦ̂̚a̸͖̱͋͆ͨ̽ͯͯṛ͉̅ͩͬ̍̽̈̓y̷̯̲̳͕͖͉͒
+            </h1>
+        </div>
+        <div class="box-2">
+            <div class="btn btn-two">
+                <span id="startbutton">
+                    <h4>Write Diary</h4>
+                </span>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="section" id="0">
+        <!-- indigenous human -->
+        <div class="canvasleft">
+            <div>
+                <img src="assets/indigenoushuman.jpg" width="400px">
+            </div>
+            <div>
+                <h3>N͡atíon͝’s͡ ͡I̷n͠di̶g̕en̕ous͝ ̢Pe҉óp̕ĺe͡ C҉o̴ņf̛irḿ ͝T͜he̶y͞ ́Do͢n͘’t͝ Nee̶d̛ Sp̶eçi͏a͠l
+                    Hol̶ida͡y͢,͟ J̛u̴s͏t̶ Large̵ ͡Sw͝a̷t͟h͡s̀ Of͘ L̢àn̢d̨ ̕Re͡t̴ur͜ne̢d͡ ͟I̴mm̵edi̶a̵te̡l̵y̵</h3>
+            </div>
+            <div>
+                <h2>WASHINGTON—Affirming the importance of traditions like Columbus Day to other Americans, the nation’s
+                    573
+                    federally recognized Indian nations released a joint statement Monday confirming they don’t need a
+                    special holiday and would be perfectly fine with just having large swaths of land returned to them
+                    immediately. “Look, we get why Christopher Columbus is very important to some people, and we’re more
+                    than willing to compromise so long as the U.S. government returns 1.5 billion acres of land to us as
+                    soon as they can,” said Chief Harold Longtoe Ouimette, 63, an Abenaki elder who confirmed that
+                    although
+                    marching in a parade honoring Native peoples might be interesting, the group of indigenous tribes
+                    would
+                    vastly prefer if U.S. residents could just vacate Manhattan, the Black Hills, and thousands of other
+                    sites taken from them through broken treaties, coercion, and violence. “Obviously, honoring someone
+                    who
+                    caused a mass genocide is still troubling, but we’re seriously open to letting that slide if we get
+                    back, say, the continent that you stole from us. That or $35 trillion. Your choice, honestly.” At
+                    press
+                    time, the U.S. government had responded to the Native peoples’ request with an offer of $5 in lump
+                    silver per person and a box of the finest cloth ever purveyed in Europe.</h2>
+            </div>
+        </div>
+        <div class="canvasoutline">
+            <div style="padding: 30px;">
+                <p>she said softly. “You know these things, Gan.<br><br>
+                    Because your people arrived, we are relearning what it means to be a healthy,
+                    thriving people. And your ancestors, fleeing from their homeworld, from their own
+                    kind who would have killed or enslaved them—they survived because of us. We
+                    saw them as people and gave them the Preserve when they still tried to kill us as
+                    worms.<br><br>
+                    At the word “worms,” I jumped. I couldn’t help it, and she couldn’t help noticing it.
+                    “I see,” she said quietly. “Would you really rather die than bear my young, Gan?”<br><br>
+                    I didn’t answer. </p>
+            </div>
+        </div>
+        <div class="box-2" style="z-index: 99; position: absolute;">
+            <div class="btn btn-two">
+                <span class="nextday">
+                    <h4>
+                        T̖̯̳̰o̱͕̰̠̪̞ ̤̲̩̞̭t͙̬he̙̖ ̥̱N̖̥̬e̹͍̪̹x͖̳͈̱̰͓͇t ̞̣̣̖͕D̹̫̗͉͓̱͚a̰y̮̖</h4>
+                </span>
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+    </div>
+
+    <div class="section" id="1">
+        <!-- //Metalosis -->
+        <div class="canvasleft">
+            <div>
+                <video width="320" height="240" controls>
+                    <source src="assets/MetalosisVideo.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div>
+                <h2>Metalosis Maligna is a documentary by Floris Kaayk about a disease which affects patients with
+                    medical
+                    implants. Sourcing from such implants a wild metal growth ultimately transforms human patients into
+                    mechanical looking constructions.</h2>
+
+            </div>
+            <div>
+                <img src="assets/MetalosisImg.png" width="200px">
+            </div>
+        </div>
+        <div class="canvasoutline">
+            <div>
+                <p style="padding: 30px;">
+                    T’Gatoi whipped her three meters of body off her couch, toward the door, and out at full speed. She
+                    had bones—ribs, a long spine, a skull, four sets of limb bones per segment. But when she moved that
+                    way, twisting, hurling herself into controlled falls, landing running, she seemed not only boneless,
+                    but aquatic—something swimming through the air as though it were water. I loved watching her move.
+                </p>
+            </div>
+        </div>
+
+        <div class="box-2" style="z-index: 99; position: absolute;">
+            <div class="btn btn-two">
+                <span class="nextday">
+                    <h4>
+                        T̖̯̳̰o̱͕̰̠̪̞ ̤̲̩̞̭t͙̬he̙̖ ̥̱N̖̥̬e̹͍̪̹x͖̳͈̱̰͓͇t ̞̣̣̖͕D̹̫̗͉͓̱͚a̰y̮̖</h4>
+                </span>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="section" id="2">
+        <!-- //gun violence -->
+        <div class="canvasleft">
+            <div>
+                <h3>Patriotism FTW: ‘Call Of Duty: Mobile’ Will Now Only Allow Guns To Be Used By Players On American
+                    Side
+                </h3>
+            </div>
+
+            <div>
+                <h2>When Activision first released Call Of Duty: Mobile early this month, fans were psyched to have the
+                    iconic first-player shooter optimized for Android and iPhone. Now it looks like there’s even more to
+                    get
+                    excited about, because the developers just revealed that an upcoming update for the game will only
+                    allow
+                    players on the American side to wield or use firearms. Hell yeah!
+
+                    This is a huge win for patriotic fans who loved Call Of Duty, but always wished the enemies of
+                    freedom
+                    had no recourse to fight back against our troops.
+
+                    “We’ve listened to the overwhelming feedback of fans who considered it disrespectful that you could
+                    shoot and even kill American combatants in the game, and we’ve corrected this issue to make Call Of
+                    Duty: Mobile better than ever before,” Activision CEO Robert Kotick told OGN in an interview,
+                    confirming
+                    that while the updated game would continue to feature terrorists from around the globe, this version
+                    will give proper reverence to the sacrifices of the Founding Fathers by making every service member
+                    fighting on the American side completely invulnerable.
+
+                    USA! USA! These colors don’t run, baby!</h2>
+            </div>
+        </div>
+        <div class="canvasoutline">
+            <p style="padding: 30px;">The small amount of fluid that came into me with her egg relaxed me as
+                completely as a sterile egg would have, so that I could remember the rifle in my
+                hands and my feelings of fear and revulsion, anger and despair. I could
+                remember the feelings without reviving them. I could talk about them.<br><br>
+                “I wouldn’t have shot you, “ I said. “Not you.” She had been taken from my
+                father’s flesh when he was my age.<br><br>
+                You could have, she insisted.<br><br>
+                “Not you.” She stood between us and her own people, protecting, interweaving.
+                “Would you have destroyed yourself?” <br><br>
+                I moved carefully, uncomfortable. “I could have done that. I nearly did. </p>
+        </div>
+        <div class="box-2" style="z-index: 99; position: absolute;">
+            <div class="btn btn-two">
+                <span class="nextday">
+                    <h4>
+                        T̖̯̳̰o̱͕̰̠̪̞ ̤̲̩̞̭t͙̬he̙̖ ̥̱N̖̥̬e̹͍̪̹x͖̳͈̱̰͓͇t ̞̣̣̖͕D̹̫̗͉͓̱͚a̰y̮̖</h4>
+                </span>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section" id="3">
+        <!-- we are guinea pigs -->
+        <div class="canvasleft">
+            <div>
+                <h3>We're all guinea pigs</h3>
+            </div>
+            <div><a href="http://www.pinknoiz.com/coldwar/ciaradiation.html">read original article</a></div>
+        </div>
+        <div class="canvasoutline">
+            <p style="padding: 30px;">“For my children’s lives?” <br><br>
+                She would say something like that. She knew how to manipulate people, Terran
+                and Tlic. But not this time.<br><br>
+                I don’t want to be a host animal , I said. “Not even yours.<br><br>
+                It took her a long time to answer. “We use almost no host animals these days,”
+                she said. “You know that.”<br><br>
+                “You use us.”<br><br>
+                “We do. We wait long years for you and teach you and join our families to yours.”
+                She moved restlessly. “You know you aren’t animals to us.”
+                I stared at her, saying nothing. </p>
+        </div>
+        <div class="box-2" style="z-index: 99; position: absolute;">
+            <div class="btn btn-two">
+                <span class="nextday">
+                    <h4>
+                        T̖̯̳̰o̱͕̰̠̪̞ ̤̲̩̞̭t͙̬he̙̖ ̥̱N̖̥̬e̹͍̪̹x͖̳͈̱̰͓͇t ̞̣̣̖͕D̹̫̗͉͓̱͚a̰y̮̖</h4>
+                </span>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section" id="4">
+        <!-- male pregnancy -->
+        <div class="canvasleft">
+            <video width="320" height="240" controls>
+                <source src="assets/malepregnancy.mp4" type="video/mp4">
+            </video>
+            <div>
+                <h2>Mr. Lee Mingwei is the first human male in history to gestate a fetus within his own body. This
+                    procedure was made possible through a phase II clinical trial at RYT Hospital-Dwayne Medical Center
+                    in
+                    New York City. </h2>
+            </div>
+
+            <div>
+                <h3>Artificial Womb receives €2.9m funding to develop prototype</h3>
+            </div>
+
+
+            <div><a href="https://www.nextnature.net/2019/10/artificial-womb-receives-fund/">read original article</a>
+            </div>
+            <div>
+                <h2>Hooray! The team of researchers at the Eindhoven University of Technology (whom we previously
+                    collaborated with to design a prototype for an artificial womb) has been awarded a €2.9 million
+                    grant to
+                    develop a working prototype of their artificial womb.…</h2>
+            </div>
+            <div class="canvasoutline">
+                <p style="padding: 20pt;">
+                    And she opened him.<br><br>
+                    His body convulsed with the first cut. He almost tore himself away from me. The
+                    sound he made . . . I had never heard such sounds come from anything human.
+                    T’Gatoi seemed to pay no attention as she lengthened and deepened the cut,
+                    now and then pausing to lick away blood. His blood vessels contracted, reacting
+                    to the chemistry of her saliva, and the bleeding slowed.<br><br>
+
+                    I felt as though I were helping her torture him, helping her consume him. I knew I
+                    would vomit soon, didn’t know why I hadn’t already. I couldn’t possibly last until
+                    she was finished.<br><br>
+
+                    She found the first grub. It was fat and deep red with his blood—both inside and
+                    out. <br><br>
+                </p>
+
+            </div>
+
+            <div class="box-2" style="z-index: 99; position: absolute;">
+                <div class="btn btn-two">
+                    <span class="nextday">
+                        <h4>
+                            T̖̯̳̰o̱͕̰̠̪̞ ̤̲̩̞̭t͙̬he̙̖ ̥̱N̖̥̬e̹͍̪̹x͖̳͈̱̰͓͇t ̞̣̣̖͕D̹̫̗͉͓̱͚a̰y̮̖</h4>
+                    </span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="5">
+        <!-- blackmarket baby -->
+        <div class="canvasleft">
+            <div>
+                <h3>Black Market Babies</h3>
+            </div>
+            <div>
+                <h2>If you feel like adopting a baby, but can't for some reason, just give the folks at Black Market
+                    Babies
+                    $50,000 and they'll steal someone's baby and give it to you. They also offer black market pandas and
+                    black market tigers for sale. Unfortunately their online form for submitting orders is 'temporarily'
+                    out
+                    of order.</h2>
+            </div>
+            <div><a href="http://hoaxes.org/?URL=http%3A%2F%2Fwww.entensity.net%2F">connect</a></div>
+            <div class="box-2" style="z-index: 99; position: absolute;">
+
+            </div>
+        </div>
+        <div class="canvasoutline">
+            <p style="padding: 30px;"> But T’Gatoi and my mother had met as
+                T’Gatoi was coming into a period of rapid development—a kind of The
+                adolescence. My mother was only a child, but for a while they developed at the
+                same rate and had no better friends than each other.<br><br>
+                T’Gatoi had even introduced my mother to the man who became my father. My
+                parents, pleased with each other in spite of their different ages, married as
+                T’Gatoi was going into her family’s business—politics. She and my mother saw
+                each other less. But sometime before my older sister was born, my mother
+                promised T’Gatoi one of her children. She would have to give <b>one of us<b> to
+                        someone, and she preferred T’Gatoi to some stranger. </p>
+
+        </div>
+        <div class="btn btn-two">
+            <span class="nextday">
+                <h4>
+                    T̖̯̳̰o̱͕̰̠̪̞ ̤̲̩̞̭t͙̬he̙̖ ̥̱N̖̥̬e̹͍̪̹x͖̳͈̱̰͓͇t ̞̣̣̖͕D̹̫̗͉͓̱͚a̰y̮̖</h4>
+            </span>
+
+        </div>
+    </div>
+
+    <div class="section" id="6">
+        <div class="canvasleft">
+            <!-- celeberty meat -->
+            <video width="320" height="240" controls>
+                <source src="assets/BiteLabs.mp4" type="video/mp4">
+            </video>
+
+            <div><a href="http://bitelabs.org/">order your flesh</a></div>
+            <div>
+                <h2>Celebrity meat production requires less than 1% of the amount of land needed for traditional
+                    farming.
+                    Currently, 70% of the world’s farmland (almost 30% of the entire earth’s surface) is used for
+                    raising
+                    animals. Meat production today is simply unsustainable: unless a radical change is made, the price
+                    of
+                    meat will eventually rise out of control. Lab grown meats are the future.
+
+                    Health
+                    Bite Labs’ meats are not affected by the growth hormones administered to farm animals, nor are they
+                    in
+                    contact with pesticides or other chemicals associated with industrial farming. The nutritional
+                    content
+                    of our products can be rigorously controlled. Farms are dirty, and animals prone to infection; Bite
+                    Labs
+                    is a clean space where we can grow safer, healthier products.</h2>
+            </div>
+        </div>
+        <div class="canvasoutline">
+            <p>I staggered out, barely made it. Beneath the tree just beyond the front door, I
+                    vomited until there was nothing left to bring up. Finally, I stood shaking, tears
+                    streaming down my face. I did not know why I was crying, but I could not stop. I
+                    went further from the house to avoid being seen. Every time I closed my eyes I
+                    saw red worms crawling over redder human flesh. </p>
+        </div>
+        <div class="box-2" style="z-index: 99; position: absolute;">
+            <div class="btn btn-two">
+                <span class="nextday">
+                    <h4>
+                        T̖̯̳̰o̱͕̰̠̪̞ ̤̲̩̞̭t͙̬he̙̖ ̥̱N̖̥̬e̹͍̪̹x͖̳͈̱̰͓͇t ̞̣̣̖͕D̹̫̗͉͓̱͚a̰y̮̖</h4>
+                </span>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="7">
+        <!-- dirty egg -->
+
+        <div>
+            <h3>Artificially Dirty Eggs</h3>
+        </div>
+        <div>
+            <img src="assets/dirtyeggs.jpg" width="300px">
+        </div>
+        <div class="box-2" style="z-index: 99; position: absolute;">
+            <div class="btn btn-two">
+                <span class="nextday">
+                    <h4>
+                        T̖̯̳̰o̱͕̰̠̪̞ ̤̲̩̞̭t͙̬he̙̖ ̥̱N̖̥̬e̹͍̪̹x͖̳͈̱̰͓͇t ̞̣̣̖͕D̹̫̗͉͓̱͚a̰y̮̖</h4>
+                </span>
+
+            </div>
+        </div>
+
+        <div><a
+                href="https://books.google.com/books?id=fIx4zubuoygC&lpg=PA255&ots=UpwbfDRuOP&pg=PA255#v=onepage&q&f=false">explore
+                the history</a></div>
+    </div>
+
+    <div class="section" id="8">
+        <div><a href="http://www.timetravelfund.com/join.html#2a">fund us</a></div>
+        <div>
+            <h2> The following is the user's agreement for membership in "The Time Travel Fund(tm)". Read it
+                very
+                carefully and make sure you fully understand and agree to each and every statement of this
+                membership
+                agreement before you join. space
+
+                1. Membership in a fund such as ours may be illegal in certain situations, states or countries.
+                To
+                the
+                best of our (and our legal advisors) knowledge, this is legal in all fifty states in the United
+                States
+                Of America; however laws change, particularly when those in charge of the laws are afraid of
+                something
+                different, or perceive that ideas such as ours may somehow "threaten" their base of power. If
+                you
+                believe your membership in this fund is somehow illegal, then do not join.
+
+                2. The results we hope for, namely for the deposits in the fund to grow over a very long time,
+                and
+                for
+                us (and our members) to one day be brought into the future, are pure speculation. We can not,
+                and
+                will
+                not, make any guarantees. We are taking all the steps we can think of to make this come to pass,
+                but
+                nothing in life is guaranteed. If it works, great! If it doesn't, then you are only out ten
+                bucks.
+                If
+                you can not afford ten dollars to invest in the fund, then do not invest in the fund.
+
+                3. $10 buys you a membership into the Time Travel Fund. Here is what we do with the $10:
+                $1.00 of each $10.00 membership is put into the investment fund.
+                $1.00 of each $10.00 membership is put into a maintenance fund, the purpose of which is to
+                insure
+                any
+                future necessary legal fees are covered. This is to protect the integrity of the investment fund
+                itself.
+                The remaining $8.00 will be used to print and mail your certificate (packaging and postage
+                included,)
+                place and maintain your name and information in our database, and to cover the associated costs
+                of
+                running the website and database, including web hosting fees and regular backups stored in
+                different
+                locations as described below. </h2>
+        </div>
+
+        <div class="box-2" style="z-index: 99; position: absolute;">
+            <div class="btn btn-two">
+                <span class="nextday">
+                    <h4>
+                        T̖̯̳̰o̱͕̰̠̪̞ ̤̲̩̞̭t͙̬he̙̖ ̥̱N̖̥̬e̹͍̪̹x͖̳͈̱̰͓͇t ̞̣̣̖͕D̹̫̗͉͓̱͚a̰y̮̖</h4>
+                </span>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="section" id="9">
+
+        <div>
+            <img src="assets/dogisland.gif" width="200px">
+        </div>
+        <div><a href="http://www.thedogisland.com">Resgister for dog island</a></div>
+        <div>
+            <h2>Over 2,500 dogs are already enjoying a better life at Dog Island. Separated from the anxieties
+                of
+                urban
+                life, dogs on Dog Island are healthy dogs who live a natural, healthy and happy life, free from
+                the
+                stress and hardship associated with daily life among humans.
+
+                They live with almost limitless space, and tens of thousands of rabbits, rodents, fish and other
+                natural
+                prey. Surrounded by thousands of other dogs, this is the only place for them to be truly social
+                and
+                create healthy families.
+
+                Dogs at Dog Island have another chance.</h2>
+        </div>
+
+        <div class="box-2" style="z-index: 99; position: absolute;">
+            <div class="btn btn-two">
+                <span class="nextday">
+                    <h4>
+                        T̖̯̳̰o̱͕̰̠̪̞ ̤̲̩̞̭t͙̬he̙̖ ̥̱N̖̥̬e̹͍̪̹x͖̳͈̱̰͓͇t ̞̣̣̖͕D̹̫̗͉͓̱͚a̰y̮̖</h4>
+                </span>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="background"></div>
+
+    <script>
+        let pageindex;
+        let pageid;
+        let newpageid;
+        let state = 0;
+        var sectionlist = [];
+
+
+        $(document).ready(function () {
+
+
+            initialize();
+
+            //everytime you enter, you go to random section
+            function initialize() {
+                $('.section').each(function () { sectionlist.push(this) });
+                console.log(sectionlist);//initial list
+                sectionload(true);
+
+            }
+            //get a random pagenumber as a index from the array
+            function newpageindex() {
+                return Math.floor(Math.random() * (sectionlist.length))
+            };
+
+            function sectionload(isfirsttime) {
+
+
+                if (pageindex == null) {
+                    pageindex = newpageindex();
+                };
+
+                console.log(pageindex);
+                pageid = sectionlist[pageindex].id;
+                $("#" + pageid).animate({ opacity: "0" }, 500);
+                setTimeout(
+                    function () {
+                        $("#" + pageid).hide();
+                        console.log("from" + pageid);
+                        if (isfirsttime == true) {
+
+                        } else { sectionlist.splice(pageindex, 1); };
+
+                        pageindex = newpageindex();
+                        pageid = sectionlist[pageindex].id;
+                        console.log(sectionlist);
+                        console.log("to" + pageid);
+                        $("#" + pageid).show();
+                        $("#" + pageid).animate({ opacity: "100" }, 500);
+
+                    }, 500);
+                // sectionlist.forEach(element => 
+                // {$(element).animate({ opacity: "0" }, 500);
+                //  $(element).hide();});
+            }
+
+            //welcome homepage
+            $("#startbutton").click(function () {
+                $("#welcomepage").animate({ opacity: "0" }, 500);
+                setTimeout(function () {
+                    $("#welcomepage").hide();
+                    console.log("welcomepagehidden");
+                }, 600);
+            })
+            //everytime you go to the next day,you    go a random section
+
+            $(".nextday").click(function () {
+                console.log("from" + pageid);
+                sectionload(false);
+                console.log("to" + pageid);
+            })
+
+        })
+
+        // Wrap every letter in a span
+        var textWrapper = document.querySelector('.ml12');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({ loop: true })
+            .add({
+                targets: '.ml12 .letter',
+                translateX: [40, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 500 + 30 * i
+            }).add({
+                targets: '.ml12 .letter',
+                translateX: [0, -30],
+                opacity: [1, 0],
+                easing: "easeInExpo",
+                duration: 1100,
+                delay: (el, i) => 100 + 30 * i
+            });
+    </script>
+
+
+</body>
+
+</html>
