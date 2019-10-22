@@ -85,7 +85,7 @@ function draw () {
   let volumeamplify = map(micvolume, 0, 1, 1.2,2.5);
 
   // generate bird every 5s
-  if (frameCount % 55-score*2 == 0) {
+  if (frameCount % 55-score*1 == 0) {
     let newsize = floor(random(2,5))*20;
     let newspeed = floor(random(1.5,6));
     let newbird = new Bird(0, random(0, height-(base+4)*blocksize), newsize, newsize,newspeed);
