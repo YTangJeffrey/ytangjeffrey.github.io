@@ -996,10 +996,9 @@
             function initialize() {
                 $('.section').each(function () { sectionlist.push(this) });
                 console.log(sectionlist);//initial list
+         }
 
 
-
-            }
             //get a random pagenumber as a index from the array
             function newpageindex() {
                 return Math.floor(Math.random() * (sectionlist.length))
@@ -1020,9 +1019,10 @@
                         function () {
                             $("#" + pageid).hide();
                             console.log("from" + pageid);
-                            if(isfirsttime){}else{
+                            if(isfirsttime==true){
+
+                            }else{
                             sectionlist.splice(pageindex, 1);}
-                            
                             pageindex = newpageindex();
                            if(sectionlist.length!=1){
                             pageid = sectionlist[pageindex].id;
