@@ -123,7 +123,7 @@ function draw () {
   for (let i = 0; i < blocklist.length; i++) {
     blocklist[i].drawcube(volumeamplify, base)
     if(blocklist[i].px<-2){
-      blocklist[i].die();
+      blocklist[i].die()  ;
     }
 
    
