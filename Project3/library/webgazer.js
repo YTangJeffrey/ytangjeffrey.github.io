@@ -10762,6 +10762,8 @@ function store_points(x, y, k) {
                     }
                 }
                 // GazeDot
+                gazingX=pred.x;
+                gazingY=pred.y;
                 gazeDot.style.transform = 'translate3d(' + pred.x + 'px,' + pred.y + 'px,0)';
             }
 
