@@ -31,7 +31,7 @@ $('#startwork').click(function () {
 
 $('#stopwork').click(function () {
   webgazer.params.showGazeDot = false
-  webgazer.end()
+  webgazer.pause();
 })
 
 function setup () {

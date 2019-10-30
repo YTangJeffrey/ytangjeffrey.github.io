@@ -3374,7 +3374,6 @@ function mosseFilter(params) {
         _w = w;
         _h = h;
         _arrlen = _w*_h;
-        
         _filter = [[],[]];
         _top = [[],[]];
         _bottom = [[],[]];
@@ -10451,8 +10450,9 @@ function store_points(x, y, k) {
     webgazer.params.faceFeedbackBoxId = 'webgazerFaceFeedbackBox';
     webgazer.params.gazeDotId = 'webgazerGazeDot'
     
-    webgazer.params.videoViewerWidth = 320;
-    webgazer.params.videoViewerHeight = 240;
+    //notes from jeffrey:I changed the scale of the video viewer
+    webgazer.params.videoViewerWidth = window.innerWidth;
+    webgazer.params.videoViewerHeight = window.innerHeight;
 
     webgazer.params.faceFeedbackBoxRatio = 0.66;
 
@@ -10882,10 +10882,13 @@ function store_points(x, y, k) {
         //////////////////////////
         // Video and video preview
         //////////////////////////
-        var topDist = '0px'
-        var leftDist = '0px'
+        var topDist = 0+'px'
+        var leftDist =0+'px'
 
         videoElement = document.createElement('video');
+
+        //notes:jeffrey : I put it to the bottom
+        videoElement.style.zIndex='-20';
         videoElement.id = webgazer.params.videoElementId;
         videoElement.srcObject = videoStream; 
         videoElement.autoplay = true;
@@ -10894,8 +10897,8 @@ function store_points(x, y, k) {
         videoElement.style.top = topDist;
         videoElement.style.left = leftDist;
         // We set these to stop the video appearing too large when it is added for the very first time
-        videoElement.style.width = webgazer.params.videoViewerWidth + 'px';
-        videoElement.style.height = webgazer.params.videoViewerHeight + 'px';
+        videoElement.style.width = window.innerWidth + 'px';
+        videoElement.style.height = window.innerHeight + 'px';
         //videoElement.style.zIndex="-1";
         
         // Canvas for drawing video to pass to clm tracker
@@ -10938,6 +10941,7 @@ function store_points(x, y, k) {
 
         // Add other preview/feedback elements to the screen once the video has shown and its parameters are initialized
         document.body.appendChild(videoElement);
+       
         function setupPreviewVideo(e) {
             
             // All video preview parts have now been added, so set the size both internally and in the preview window.
@@ -11133,6 +11137,7 @@ function store_points(x, y, k) {
         webgazer.params.showVideo = val;
         if( videoElement) {
             videoElement.style.display = val ? 'block' : 'none';
+            
         }
         return webgazer;
     };
