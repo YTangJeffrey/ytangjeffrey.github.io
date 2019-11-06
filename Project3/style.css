@@ -4,6 +4,9 @@ body {
     height: 100%;
 }
 
+
+
+
 @font-face {
     font-family: 'VTF';
     src: url('assets/VTF_Mixo-Regular_web.woff2') format('woff2');
@@ -93,6 +96,9 @@ p {
     margin: 20px;
 }
 
+#about:hover{
+    cursor: pointer;
+}
 #GoBack{
     position: fixed; 
     left: 20px;
@@ -100,10 +106,10 @@ p {
     z-index: 10; 
     margin: 20px;
 }
-
-#about:hover{
+#GoBack:hover{
     cursor: pointer;
 }
+
 
 #resultpage{
     z-index: 10;
