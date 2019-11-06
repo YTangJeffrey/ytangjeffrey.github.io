@@ -45,15 +45,40 @@ body {
 h1 {
     text-align: center;
     font-size: 80px;
-    color: black;
+    color: transparent;
+    padding-top: 10px;
+    animation-name: textenter;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
 }
 
 p {
     font-family: 'happytimesregular';
     text-align: center;
     font-size: 40px;
-    color: black;
+    color: transparent;
+    padding-top: 10px;
+    animation-name: textenter;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
 }
+
+@keyframes textenter {
+  0% {
+      padding-top: 10px;
+      color:transparent
+      
+  }
+
+  100% {
+    padding-top: 0px;
+      color:black
+      
+  }
+}
+
 
 #startwork {
 

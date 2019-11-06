@@ -11012,7 +11012,7 @@ function store_points(x, y, k) {
      */
     webgazer.begin = function(onFail) {
         if (window.location.protocol !== 'https:' && window.location.hostname !== 'localhost' && window.chrome){
-            alert("WebGazer works only over https. If you are doing local development you need to run a local server.");
+            //alert("WebGazer works only over https. If you are doing local development you need to ///run a local server.");
         }
 
         loadGlobalData();
