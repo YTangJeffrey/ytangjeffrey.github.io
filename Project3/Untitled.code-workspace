@@ -2,6 +2,12 @@
     "folders": [
         {
             "path": "."
+        },
+        {
+            "path": "/Users/Jeffshomefolder/Desktop/CodeRelated/Metaphile"
         }
-    ]
+    ],
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "Project3"
+    }
 }

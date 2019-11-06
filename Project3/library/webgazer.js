@@ -10602,13 +10602,18 @@ function store_points(x, y, k) {
             //the validation box then the box border turns green, otherwise if
             //the eyes are outside of the box the colour is red
             if (xPositions && yPositions){
-                faceFeedbackBox.style.border = 'solid green';
+                faceFeedbackBox.style.border = 'transparent';
+                $('#nottrackingsign').hide();
+                
+
             } else {
-                faceFeedbackBox.style.border = 'solid red';
+                 faceFeedbackBox.style.border = 'transparent';
+                if(iscalibrated){
+                $('#nottrackingsign').show();}
             }
         }
         else
-            faceFeedbackBox.style.border = 'solid black';
+             faceFeedbackBox.style.border = 'transparent';
     }
 
     /**
