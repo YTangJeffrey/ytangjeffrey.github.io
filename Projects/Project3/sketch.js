@@ -48,6 +48,9 @@ let keysound
 let coinsound
 let happytimes
 let VTF
+let isinitialized = false
+var calibratorlist = [];
+var calibratorClicked = 0
 
 function preload () {
   keysound = loadSound('assets/key.wav')
@@ -67,17 +70,17 @@ function setup () {
   rectMode(CENTER)
 }
 
-let isinitialized = false
-var calibratorlist = []
-var calibratorClicked = 0
+
 // generate dots for tracking calibration
 function calibration () {
+  var w = (windowWidth-200)/3;
+  var h = (windowHeight-100)/3;
   if (isinitialized == false) {
     for (let i = 0; i < 4; i++) {
       for (let a = 0; a < 4; a++) {
         let newcalibrator = new Calibrator(
-          (width / 3) * i,
-          (height / 3) * a,
+          100+(w * i),
+          50+(h* a),
           20,
           20
         )
